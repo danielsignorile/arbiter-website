@@ -38,8 +38,8 @@ export default function Hero() {
 
           <p className="text-lg sm:text-xl text-white/65 leading-relaxed mb-10 max-w-2xl mx-auto">
             Arbiter is the completions management platform built for capital projects in
-            energy, mining and infrastructure. Replace paper and spreadsheets with
-            real-time digital control.
+            energy, mining and infrastructure. Use real-time data to drive cost certainty
+            and deliver assets on time and on budget.
           </p>
 
           <div className="flex justify-center">
