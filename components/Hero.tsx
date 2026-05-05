@@ -37,8 +37,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg sm:text-xl text-white/65 leading-relaxed mb-10 max-w-2xl mx-auto">
-            Trusted by project teams across energy, mining and infrastructure. Arbiter
-            delivers real-time completions control from first check sheet to final handover.
+            From construction walkdowns to asset handover, Arbiter provides real-time
+            completions management built for the complexity of specialized capital projects.
           </p>
 
           <div className="flex justify-center">
