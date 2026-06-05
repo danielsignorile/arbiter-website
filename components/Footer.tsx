@@ -14,15 +14,6 @@ const footerLinks = [
     ],
   },
   {
-    heading: 'Why Arbiter',
-    links: [
-      { label: 'Purpose-Built Platform', href: '/#why' },
-      { label: 'Offline & Mobile Capable', href: '/#why' },
-      { label: 'Proven Track Record', href: '/#why' },
-      { label: 'Full Audit Trail', href: '/#why' },
-    ],
-  },
-  {
     heading: 'Learn',
     links: [
       { label: 'News & Insights', href: '/learn/news' },
@@ -44,7 +35,7 @@ export default function Footer() {
     <footer className="bg-[#0a0a0a] border-t border-white/5 text-white">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link href="/" className="flex items-center mb-4">

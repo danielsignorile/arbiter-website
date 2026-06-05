@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useDemoModal } from './DemoModalContext';
+import { useAnnouncementBar } from './AnnouncementBarContext';
 
 type NavItem = {
   label: string;
@@ -54,6 +55,7 @@ const navItems: NavItem[] = [
 
 export default function Navbar() {
   const { openModal } = useDemoModal();
+  const { visible: barVisible } = useAnnouncementBar();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<number | null>(null);
@@ -77,7 +79,9 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-200 ${
+      className={`fixed left-0 right-0 z-50 bg-white transition-all duration-200 ${
+        barVisible ? 'top-9' : 'top-0'
+      } ${
         scrolled ? 'shadow-md border-b border-arbiter-border' : 'border-b border-arbiter-border/40'
       }`}
     >

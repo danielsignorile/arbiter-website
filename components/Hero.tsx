@@ -1,16 +1,60 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useDemoModal } from './DemoModalContext';
 
+// `suffix` is appended to the counting number. When `suffixInstant` is true the
+// suffix shows as soon as the animation starts (e.g. "+"); when false it only
+// appears once the number reaches its target (the "–95%" of "80–95%").
 const stats = [
-  { value: '300+', label: 'Projects' },
-  { value: '80–95%', label: 'On Budget & Schedule' },
-  { value: '15+', label: 'Years Field Refinement' },
+  { target: 300, suffix: '+', suffixInstant: true, label: 'Projects' },
+  { target: 80, suffix: '–95%', suffixInstant: false, label: 'On Budget & Schedule' },
+  { target: 15, suffix: '+', suffixInstant: true, label: 'Years Field Refinement' },
 ];
+
+const DURATION = 2000;
+// Starts fast, slows near the end.
+const easeOutCubic = (p: number) => 1 - Math.pow(1 - p, 3);
 
 export default function Hero() {
   const { openModal } = useDemoModal();
+  const statsRef = useRef<HTMLDListElement>(null);
+  const [started, setStarted] = useState(false);
+  const [counts, setCounts] = useState(() => stats.map(() => 0));
+
+  // Trigger once when the stats bar scrolls into view.
+  useEffect(() => {
+    const node = statsRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  // Count every number up from 0 to its target over DURATION with easing.
+  useEffect(() => {
+    if (!started) return;
+    let raf = 0;
+    let startTime: number | null = null;
+    const tick = (now: number) => {
+      if (startTime === null) startTime = now;
+      const p = Math.min((now - startTime) / DURATION, 1);
+      const eased = easeOutCubic(p);
+      setCounts(stats.map((s) => Math.round(s.target * eased)));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [started]);
 
   return (
     <section className="relative flex flex-col min-h-[85vh] pt-16 overflow-hidden bg-[#0d2b06]">
@@ -56,13 +100,20 @@ export default function Hero() {
       {/* Stats bar */}
       <div className="relative border-t border-white/10 bg-white/5 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x sm:divide-white/15">
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center sm:px-8 first:pl-0 last:pr-0">
-                <dt className="text-3xl font-extrabold text-white">{stat.value}</dt>
-                <dd className="text-sm text-white/50 mt-1 font-medium">{stat.label}</dd>
-              </div>
-            ))}
+          <dl ref={statsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x sm:divide-white/15">
+            {stats.map((stat, i) => {
+              const reached = counts[i] >= stat.target;
+              const showSuffix = stat.suffixInstant ? started : reached;
+              return (
+                <div key={stat.label} className="flex flex-col items-center sm:px-8 first:pl-0 last:pr-0">
+                  <dt className="text-3xl font-extrabold text-white">
+                    {counts[i]}
+                    {showSuffix ? stat.suffix : ''}
+                  </dt>
+                  <dd className="text-sm text-white/50 mt-1 font-medium">{stat.label}</dd>
+                </div>
+              );
+            })}
           </dl>
         </div>
       </div>

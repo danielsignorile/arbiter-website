@@ -24,7 +24,7 @@ module.exports = {
       },
       animation: {
         'fade-in': 'fadeIn 0.2s ease-out',
-        'marquee': 'marquee 30s linear infinite',
+        'marquee': 'marquee 35s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -33,7 +33,7 @@ module.exports = {
         },
         marquee: {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-33.333%)' },
+          '100%': { transform: 'translateX(-25%)' },
         },
       },
     },

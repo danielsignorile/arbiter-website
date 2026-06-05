@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arbiter — Industry Segments</title>
+<style>
+  /* ----------------------------------------------------------------
+     Arbiter — Industry Segments (reference build)
+     Single-file: HTML + CSS + JS inline, no external dependencies.
+     Theme: industrial dark / charcoal. Accent: muted orange.
+  ---------------------------------------------------------------- */
+  :root {
+    --bg:          #0e0f11;  /* near-black page */
+    --bg-alt:      #131518;  /* alternating section */
+    --card:        #1a1d21;  /* use-case card */
+    --quote:       #16181c;  /* pull-quote card */
+    --text:        #f3f4f5;
+    --muted:       #9aa1a8;
+    --muted-dim:   #6b7177;
+    --border:      rgba(255, 255, 255, 0.09);
+    --border-soft: rgba(255, 255, 255, 0.06);
+    --accent:      #cf7a3a;  /* muted industrial orange */
+    --accent-hi:   #e08a45;  /* brighter for small text on dark */
+    --accent-dk:   #b3692f;  /* hover */
+    --on-accent:   #160f06;  /* text on accent fills */
+    --strip-h:     60px;
+    --maxw:        1120px;
+    --radius:      12px;
+    --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Top bar (mock site nav for context) ---------- */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+  .brand {
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  .brand span { color: var(--accent-hi); }
+  .topbar .nav-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: color .2s, border-color .2s;
+  }
+  .topbar .nav-cta:hover { color: var(--text); border-color: var(--accent); }
+
+  /* ---------- Hero band ---------- */
+  .hero {
+    padding: 56px 0 36px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .hero .eyebrow {
+    color: var(--accent-hi);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.25rem);
+    line-height: 1.06;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    max-width: 18ch;
+  }
+  .hero p {
+    color: var(--muted);
+    font-size: clamp(1rem, 1.4vw, 1.18rem);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  /* ---------- Sticky segment tag strip (Enverus-style pills) ---------- */
+  .strip {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(14, 15, 17, 0.82);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .strip .inner {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: var(--strip-h);
+    padding: 12px 24px;
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+  .strip .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-dim);
+    margin-right: 6px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 9px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .18s, border-color .18s, background-color .18s;
+  }
+  .pill:hover { color: var(--text); border-color: rgba(207, 122, 58, 0.55); }
+  .pill.active {
+    color: var(--on-accent);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .pill .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor; opacity: .55;
+  }
+  .pill.active .dot { opacity: 1; }
+
+  /* ---------- Segment sections ---------- */
+  .segment {
+    padding: 84px 0;
+    border-bottom: 1px solid var(--border-soft);
+    scroll-margin-top: calc(var(--strip-h) + 24px);
+  }
+  .segment:nth-of-type(even) { background: var(--bg-alt); }
+
+  .seg-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--accent-hi);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+  }
+  .seg-eyebrow .bar { width: 26px; height: 2px; background: var(--accent); }
+
+  .seg-headline {
+    font-size: clamp(1.6rem, 3.1vw, 2.5rem);
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -0.018em;
+    margin: 0 0 18px;
+    max-width: 22ch;
+  }
+  .seg-desc {
+    color: var(--muted);
+    font-size: clamp(1rem, 1.25vw, 1.1rem);
+    max-width: 64ch;
+    margin: 0 0 44px;
+  }
+
+  /* use cases */
+  .usecases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 44px;
+  }
+  .uc {
+    background: var(--card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 24px 22px;
+    transition: border-color .2s, transform .2s;
+  }
+  .uc:hover { border-color: rgba(207, 122, 58, 0.4); transform: translateY(-2px); }
+  .uc .ic {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 9px;
+    background: rgba(207, 122, 58, 0.12);
+    color: var(--accent-hi);
+    margin-bottom: 16px;
+  }
+  .uc .ic svg { width: 22px; height: 22px; }
+  .uc h3 {
+    font-size: 15.5px;
+    font-weight: 700;
+    margin: 0 0 7px;
+    letter-spacing: -0.01em;
+  }
+  .uc p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  /* pull quote */
+  .quote {
+    background: var(--quote);
+    border: 1px solid var(--border-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 26px 28px;
+    max-width: 760px;
+    margin: 0 0 40px;
+  }
+  .quote blockquote {
+    margin: 0;
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    line-height: 1.5;
+    font-weight: 500;
+    color: #e8eaec;
+    letter-spacing: -0.01em;
+  }
+  .quote cite {
+    display: block;
+    margin-top: 16px;
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+  .quote cite::before { content: "— "; color: var(--accent-hi); }
+
+  /* CTA button */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--accent);
+    color: var(--on-accent);
+    font-weight: 700;
+    font-size: 14.5px;
+    letter-spacing: 0.01em;
+    padding: 13px 24px;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+    transition: background-color .2s, transform .15s;
+  }
+  .btn:hover { background: var(--accent-dk); border-color: var(--accent-dk); transform: translateY(-1px); }
+  .btn svg { width: 17px; height: 17px; }
+
+  /* ---------- Closing CTA band ---------- */
+  .closing {
+    padding: 88px 0;
+    text-align: center;
+    scroll-margin-top: calc(var(--strip-h) + 24px);
+  }
+  .closing h2 {
+    font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+  }
+  .closing p { color: var(--muted); max-width: 48ch; margin: 0 auto 28px; font-size: 1.08rem; }
+
+  footer {
+    border-top: 1px solid var(--border-soft);
+    padding: 28px 0;
+    color: var(--muted-dim);
+    font-size: 12.5px;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .strip .label { display: none; }
+    .segment { padding: 60px 0; }
+    .hero { padding: 40px 0 28px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .uc, .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Mock site nav (context only — replace with real Arbiter nav) -->
+  <div class="topbar">
+    <div class="brand">ARBITER<span>.</span></div>
+    <a class="nav-cta" href="#request-demo">Request a Demo</a>
+  </div>
+
+  <!-- Hero band -->
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Industry Segments</p>
+      <h1>Built for the way your project actually gets commissioned.</h1>
+      <p>
+        Arbiter is a digital completions and commissioning management platform built
+        for capital project teams in energy and construction. Pick the work you run —
+        the path from construction to handover looks different for each.
+      </p>
+    </div>
+  </header>
+
+  <!-- Sticky segment tag strip -->
+  <nav class="strip" aria-label="Industry segments">
+    <div class="inner">
+      <span class="label">Jump to</span>
+      <a class="pill" href="#oil-sands" data-target="oil-sands"><span class="dot"></span>Oil Sands</a>
+      <a class="pill" href="#midstream" data-target="midstream"><span class="dot"></span>Midstream Pipelines</a>
+      <a class="pill" href="#energy-infra" data-target="energy-infra"><span class="dot"></span>Energy Infrastructure</a>
+      <a class="pill" href="#industrial-mining" data-target="industrial-mining"><span class="dot"></span>Industrial / Mining</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============ OIL SANDS ============ -->
+    <section class="segment" id="oil-sands">
+      <div class="wrap">
+        <p class="seg-eyebrow"><span class="bar"></span>Oil Sands</p>
+        <h2 class="seg-headline">80,000 check sheets shouldn't live in a spreadsheet.</h2>
+        <p class="seg-desc">
+          Owner-operators and EPC contractors running multi-pad and facility builds carry
+          enormous check sheet volumes across construction, pre-commissioning, and commissioning —
+          under regulatory handover requirements that don't forgive gaps. Arbiter holds every
+          discipline, ITR, and signature in one system, so the turnover dossier is built as you
+          go instead of reconstructed over weeks at project end.
+        </p>
+
+        <div class="usecases">
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 11l1.8 1.8 3.7-3.7"/></svg>
+            </div>
+            <h3>Digital ITR &amp; Check Sheet Management</h3>
+            <p>Every discipline's sheets generated, completed, and signed in one auditable system — at facility scale.</p>
+          </div>
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 16v-3M12 16V9M16 16v-5"/></svg>
+            </div>
+            <h3>System-Level Progress Dashboards</h3>
+            <p>Roll thousands of check sheets up to system and subsystem completion the regulator and owner can read at a glance.</p>
+          </div>
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M5 7l1 12.5a1 1 0 001 .9h10a1 1 0 001-.9L19 7M4.4 7l1.4-3h12.4l1.4 3M9.5 12h5"/></svg>
+            </div>
+            <h3>Turnover Dossier Compilation</h3>
+            <p>One-click archive of the complete, indexed handover package — built continuously, not scrambled together at the end.</p>
+          </div>
+        </div>
+
+        <div class="quote">
+          <blockquote>"On our last facility, crews were generating sheets faster than the office could file them. With Arbiter the dossier was ninety percent built before the last weld was tied in."</blockquote>
+          <cite>Commissioning Manager, SAGD facility build</cite>
+        </div>
+
+        <a class="btn" href="#request-demo">See How It Works
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ MIDSTREAM PIPELINES ============ -->
+    <section class="segment" id="midstream">
+      <div class="wrap">
+        <p class="seg-eyebrow"><span class="bar"></span>Midstream Pipelines</p>
+        <h2 class="seg-headline">If the field won't use it, it isn't a commissioning system.</h2>
+        <p class="seg-desc">
+          Pipeline and midstream teams — compressor stations, metering facilities, pump stations —
+          often run lean, with contract technicians rotating in and out and no formal CMS behind
+          them. Spreadsheets, paper ITRs, and a materials vendor's makeshift database don't survive
+          a real turnover. Arbiter gives the field a check sheet process simple enough to actually
+          get used, and gives the office a live dashboard instead of a folder of scanned PDFs.
+        </p>
+
+        <div class="usecases">
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 11l1.8 1.8 3.7-3.7"/></svg>
+            </div>
+            <h3>Digital ITR &amp; Check Sheet Management</h3>
+            <p>Standardized ITRs and procedures a contract tech can pick up between coffees — no week of training first.</p>
+          </div>
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12s3.4-6.5 9.5-6.5S21.5 12 21.5 12 18.1 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>Real-Time Field Visibility</h3>
+            <p>Office sees what the field completed the moment it syncs — station readiness on a dashboard, not a guess.</p>
+          </div>
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3.2v4.8c0 4.6-3.2 7.6-7.5 9-4.3-1.4-7.5-4.4-7.5-9V6.2z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3>Contractor &amp; Third-Party Access Control</h3>
+            <p>Bring rotating techs and vendors on with scoped access — they touch their work and nothing else.</p>
+          </div>
+        </div>
+
+        <div class="quote">
+          <blockquote>"Half my crew is contract guys here for six weeks. I need them filling out ITRs on day one, not sitting through training. They picked Arbiter up between coffees."</blockquote>
+          <cite>Lead Commissioning Technician, compressor station</cite>
+        </div>
+
+        <a class="btn" href="#request-demo">See How It Works
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ ENERGY INFRASTRUCTURE ============ -->
+    <section class="segment" id="energy-infra">
+      <div class="wrap">
+        <p class="seg-eyebrow"><span class="bar"></span>Energy Infrastructure</p>
+        <h2 class="seg-headline">Generic PM tools stop at mechanical completion. Your project doesn't.</h2>
+        <p class="seg-desc">
+          Commissioning leads and project managers on power, wind, solar, BESS, and LNG projects
+          inherit tools built for construction management — and watch them run out of road right
+          where commissioning begins. Punch lists scatter across spreadsheets, and the path from
+          construction to energized handover never gets owned by one system. Arbiter is purpose-built
+          for that last mile, across civil, mechanical, and E&amp;I.
+        </p>
+
+        <div class="usecases">
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M3.5 6l1 1 1.6-2M3.5 12l1 1 1.6-2M3.5 18l1 1 1.6-2"/></svg>
+            </div>
+            <h3>Punch List &amp; Deficiency Tracking</h3>
+            <p>One live list from walkdown to close-out — assigned, prioritized, and audit-ready instead of lost across tabs.</p>
+          </div>
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16.5l9 5 9-5"/></svg>
+            </div>
+            <h3>Multi-Discipline Workflow</h3>
+            <p>Civil, mechanical, and E&amp;I working the same systems and subsystems — no parallel trackers to reconcile.</p>
+          </div>
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 16v-3M12 16V9M16 16v-5"/></svg>
+            </div>
+            <h3>System-Level Progress Dashboards</h3>
+            <p>Track true completion from construction through commissioning to handover in one structured view.</p>
+          </div>
+        </div>
+
+        <div class="quote">
+          <blockquote>"Construction handed off clean on paper. Then commissioning started and the punch list lived in four different spreadsheets. We don't run a project that way anymore."</blockquote>
+          <cite>Project Manager, utility-scale solar &amp; BESS</cite>
+        </div>
+
+        <a class="btn" href="#request-demo">See How It Works
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ INDUSTRIAL / MINING ============ -->
+    <section class="segment" id="industrial-mining">
+      <div class="wrap">
+        <p class="seg-eyebrow"><span class="bar"></span>Industrial / Mining</p>
+        <h2 class="seg-headline">No signal, no problem. The work doesn't stop for connectivity.</h2>
+        <p class="seg-desc">
+          Capital teams commissioning processing plants and remote industrial or mining facilities
+          can't depend on a connection — and can't afford document control scattered across OneDrive
+          folders and local drives. Arbiter works fully offline in the field and keeps drawings, data
+          sheets, and check sheets controlled in one repository, so the turnover package is assembled
+          continuously instead of pieced together at the end.
+        </p>
+
+        <div class="usecases">
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.2c5-4 11.9-4 17 0"/><path d="M6.5 12c3.3-2.5 7.7-2.5 11 0"/><path d="M9.3 15.7c1.7-1.2 3.7-1.2 5.4 0"/><path d="M12 19h.01"/><path d="M3 3l18 18"/></svg>
+            </div>
+            <h3>Offline Field Access</h3>
+            <p>Complete sheets all day past the last cell tower; everything syncs the moment crews are back in range.</p>
+          </div>
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v12a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+            </div>
+            <h3>Doculink — Controlled Document Repository</h3>
+            <p>Drawings, data sheets, and revisions controlled in one place — no more hunting across shared drives.</p>
+          </div>
+          <div class="uc">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M5 7l1 12.5a1 1 0 001 .9h10a1 1 0 001-.9L19 7M4.4 7l1.4-3h12.4l1.4 3M9.5 12h5"/></svg>
+            </div>
+            <h3>Turnover Dossier Compilation</h3>
+            <p>One-click handover archive that stays current as the project closes out, remote site or not.</p>
+          </div>
+        </div>
+
+        <div class="quote">
+          <blockquote>"Our site's two hours past the last cell tower. The crew completes sheets offline all day and it syncs the moment they're back in range. Document control finally stopped being a guessing game."</blockquote>
+          <cite>Completions Lead, remote processing plant</cite>
+        </div>
+
+        <a class="btn" href="#request-demo">See How It Works
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="closing" id="request-demo">
+      <div class="wrap">
+        <h2>See it on your project.</h2>
+        <p>Walk through how Arbiter runs completions for work that looks like yours.</p>
+        <a class="btn" href="https://www.arbiter-completions.com/#contact">Request a Demo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Arbiter Project Completions — Industry Segments reference build.</footer>
+
+<script>
+  (function () {
+    var pills = Array.prototype.slice.call(document.querySelectorAll('.pill'));
+    var byTarget = {};
+    pills.forEach(function (p) { byTarget[p.getAttribute('data-target')] = p; });
+
+    function setActive(id) {
+      pills.forEach(function (p) {
+        p.classList.toggle('active', p.getAttribute('data-target') === id);
+      });
+    }
+
+    // Immediate highlight on click (observer keeps it in sync afterward).
+    pills.forEach(function (p) {
+      p.addEventListener('click', function () { setActive(p.getAttribute('data-target')); });
+    });
+
+    // Highlight the active segment as it crosses the upper-middle of the viewport.
+    var sections = Array.prototype.slice.call(document.querySelectorAll('main .segment'));
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && byTarget[entry.target.id]) {
+            setActive(entry.target.id);
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+      sections.forEach(function (s) { observer.observe(s); });
+    }
+
+    // Default the first pill as active on load.
+    if (sections.length) setActive(sections[0].id);
+  })();
+</script>
+</body>
+</html>
