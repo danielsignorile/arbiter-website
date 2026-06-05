@@ -5,12 +5,12 @@ const footerLinks = [
   {
     heading: 'What We Offer',
     links: [
-      { label: 'SoftChecks', href: '/#features' },
-      { label: 'Actions and Deficiencies', href: '/#features' },
-      { label: 'Real-Time Reporting', href: '/#features' },
-      { label: 'Dynamic ITP', href: '/#features' },
-      { label: 'Doculink', href: '/#features' },
-      { label: 'Dossier (Document Turnover)', href: '/#features' },
+      { label: 'SoftChecks', href: '/features/softchecks' },
+      { label: 'Actions and Deficiencies', href: '/features/actions-and-deficiencies' },
+      { label: 'Real-Time Reporting', href: '/features/real-time-reporting' },
+      { label: 'Dynamic ITP', href: '/features/dynamic-itp' },
+      { label: 'Doculink', href: '/features/doculink' },
+      { label: 'Dossier (Document Turnover)', href: '/features/dossier' },
     ],
   },
   {
