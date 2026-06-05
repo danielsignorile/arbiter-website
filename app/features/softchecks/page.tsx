@@ -11,7 +11,7 @@ export default function SoftChecksPage() {
         {
           heading: 'Go Fully Digital',
           body: [
-            'Check sheets are automatically populated with project- and object-specific information, including headers and object attributes. Continue to use your existing documents in electronic format — user familiarity ensures a seamless transition.',
+            'Check sheets are automatically populated with project- and object-specific information, including headers and object attributes. Continue to use your existing documents in electronic format. User familiarity ensures a seamless transition.',
           ],
           bullets: [
             { title: '', body: 'Eliminate the need for printing and stockpiling paper check sheets for your field staff.' },
@@ -23,7 +23,7 @@ export default function SoftChecksPage() {
         {
           heading: 'Real-Time Project Progress',
           body: [
-            'Fully digital check sheets are instantaneously updated, providing real-time project progress and increased visibility of project status — without requiring field managers to manually track and compile reports.',
+            'Fully digital check sheets are instantaneously updated, providing real-time project progress and increased visibility of project status, without requiring field managers to manually track and compile reports.',
           ],
           bullets: [
             { title: '', body: 'Accurate project status available to all levels of management from anywhere.' },
@@ -36,7 +36,7 @@ export default function SoftChecksPage() {
           heading: 'Mobile and Offline Capable',
           body: [
             'SoftChecks works in remote locations without cellular service or WiFi. Check sheets are loaded into the browser of your mobile device, completed offline, and uploaded automatically when the user returns to a connected area.',
-            'All check sheets remain in the same centralized database, accessible through the Arbiter web portal — so your records are always consistent, no matter where the work happens.',
+            'All check sheets remain in the same centralized database, accessible through the Arbiter web portal, so your records are always consistent, no matter where the work happens.',
           ],
         },
       ]}

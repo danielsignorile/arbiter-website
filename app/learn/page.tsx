@@ -40,7 +40,7 @@ export default function LearnPage() {
             <p className="text-xs font-bold text-[#6dc744] tracking-[0.2em] uppercase mb-4">Learn</p>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-5">Follow Along With Arbiter</h1>
             <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-              Insights, case studies, and resources from the field — to help you run better projects.
+              Insights, case studies, and resources from the field, to help you run better projects.
             </p>
           </div>
         </div>

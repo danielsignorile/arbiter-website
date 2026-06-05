@@ -116,7 +116,7 @@ export default function IPCBlackrodPage() {
                 During a routine SoftCheck on a bank of flame detectors in the production facility,
                 a technician flagged a model number that did not match the specification. The discrepancy
                 was instantly logged as an Action, assigned to the responsible vendor, and escalated to
-                the commissioning lead — all within the Arbiter platform.
+                the commissioning lead, all within the Arbiter platform.
               </p>
             </div>
 
@@ -137,8 +137,8 @@ export default function IPCBlackrodPage() {
               <h2 className="text-xl font-bold text-arbiter-dark mb-3">The Outcome</h2>
               <p>
                 The vendor was required to replace the incorrect units before the startup sequence
-                could proceed. Because Arbiter captured the full timeline — detection, assignment,
-                rectification, and re-verification — the project team had a complete, timestamped
+                could proceed. Because Arbiter captured the full timeline: detection, assignment,
+                rectification, and re-verification, the project team had a complete, timestamped
                 audit trail ready for the regulatory review.
               </p>
               <p className="mt-4">

@@ -29,10 +29,10 @@ const navItems: NavItem[] = [
     label: 'Why Arbiter',
     sectionLabel: 'OUR DIFFERENTIATORS',
     items: [
-      { label: 'Purpose-Built for Completions', href: '#why', desc: 'Designed ground-up for project completion and handover' },
-      { label: 'Built by the Field', href: '#why', desc: '15+ years of in-field refinement with multi-disciplinary input' },
-      { label: 'Offline & Mobile Capable', href: '#why', desc: 'Works in remote locations without WiFi or cellular' },
-      { label: 'Proven Track Record', href: '#why', desc: '80–95% of projects completed on budget and schedule' },
+      { label: 'Purpose-Built for Completions', href: '/#why', desc: 'Designed ground-up for project completion and handover' },
+      { label: 'Built by the Field', href: '/#why', desc: '15+ years of in-field refinement with multi-disciplinary input' },
+      { label: 'Offline & Mobile Capable', href: '/#why', desc: 'Works in remote locations without WiFi or cellular' },
+      { label: 'Proven Track Record', href: '/#why', desc: '80–95% of projects completed on budget and schedule' },
     ],
   },
   {
@@ -47,8 +47,7 @@ const navItems: NavItem[] = [
     label: 'Company',
     items: [
       { label: 'About', href: '/about', desc: 'Our mission and story' },
-      { label: 'News', href: '#news', desc: 'Latest from Arbiter' },
-      { label: 'Contact Us', href: '#contact', desc: 'Reach out anytime' },
+      { label: 'Contact Us', href: '/#contact', desc: 'Reach out anytime' },
     ],
   },
 ];

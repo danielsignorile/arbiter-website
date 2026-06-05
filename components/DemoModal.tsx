@@ -67,7 +67,7 @@ export default function DemoModal({ isOpen, onClose }: Props) {
     const payload = {
       fields,
       context: {
-        pageUri: window.location.href,
+        pageUri: 'https://www.arbiter-completions.com',
         pageName: 'Arbiter Website',
       },
     };
@@ -139,7 +139,7 @@ export default function DemoModal({ isOpen, onClose }: Props) {
             </div>
             <h3 className="text-lg font-bold text-arbiter-dark mb-2">You&apos;re all set!</h3>
             <p className="text-arbiter-muted">
-              Thanks — we&apos;ll be in touch within one business day.
+              Thanks. We&apos;ll be in touch within one business day.
             </p>
           </div>
         ) : (

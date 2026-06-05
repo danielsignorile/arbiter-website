@@ -98,7 +98,7 @@ export default function PowerOfRealTimeInfoPage() {
             <div className="relative">
               <div className="text-[#6dc744] text-5xl font-serif leading-none mb-3 opacity-60">"</div>
               <p className="text-white text-lg font-medium italic leading-snug">
-                Live project updates provide stakeholders with access to critical information — the difference between a reactive team and a proactive one.
+                Live project updates provide stakeholders with access to critical information, making the difference between a reactive team and a proactive one.
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function PowerOfRealTimeInfoPage() {
             For professionals managing intricate capital construction projects, the ability to see
             what is happening across a job site in real time is no longer a luxury. It is the
             baseline expectation of owners, operators, and regulators alike. Platforms built around
-            live reporting — like Arbiter — eliminate the lag between what happens in the field and
+            live reporting platforms like Arbiter eliminate the lag between what happens in the field and
             what leadership sees, making the entire project more responsive and accountable.
           </p>
 

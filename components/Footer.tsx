@@ -5,21 +5,21 @@ const footerLinks = [
   {
     heading: 'What We Offer',
     links: [
-      { label: 'SoftChecks', href: '#features' },
-      { label: 'Actions and Deficiencies', href: '#features' },
-      { label: 'Real-Time Reporting', href: '#features' },
-      { label: 'Dynamic ITP', href: '#features' },
-      { label: 'Doculink', href: '#features' },
-      { label: 'Dossier (Document Turnover)', href: '#features' },
+      { label: 'SoftChecks', href: '/#features' },
+      { label: 'Actions and Deficiencies', href: '/#features' },
+      { label: 'Real-Time Reporting', href: '/#features' },
+      { label: 'Dynamic ITP', href: '/#features' },
+      { label: 'Doculink', href: '/#features' },
+      { label: 'Dossier (Document Turnover)', href: '/#features' },
     ],
   },
   {
     heading: 'Why Arbiter',
     links: [
-      { label: 'Purpose-Built Platform', href: '#why' },
-      { label: 'Offline & Mobile Capable', href: '#why' },
-      { label: 'Proven Track Record', href: '#why' },
-      { label: 'Full Audit Trail', href: '#why' },
+      { label: 'Purpose-Built Platform', href: '/#why' },
+      { label: 'Offline & Mobile Capable', href: '/#why' },
+      { label: 'Proven Track Record', href: '/#why' },
+      { label: 'Full Audit Trail', href: '/#why' },
     ],
   },
   {
@@ -33,9 +33,8 @@ const footerLinks = [
     heading: 'Company',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'News', href: '#news' },
-      { label: 'Contact Us', href: '#contact' },
-      { label: 'Request a Demo', href: '#contact' },
+      { label: 'Contact Us', href: '/#contact' },
+      { label: 'Request a Demo', href: '/#contact' },
     ],
   },
 ];

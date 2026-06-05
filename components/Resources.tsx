@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 const articles = [
@@ -8,6 +9,7 @@ const articles = [
     desc: "How Arbiter's digital check sheet system caught a critical flame detector discrepancy before first fire and compiled the full audit trail instantly.",
     image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&auto=format&fit=crop&q=80',
     readTime: '5 min read',
+    href: '/case-studies/ipc-blackrod-sagd',
   },
   {
     tag: 'Insight',
@@ -16,6 +18,7 @@ const articles = [
     desc: 'Tracking and managing paper check sheets causes scheduling delays and inaccurate progress reporting. Here\'s what the data shows.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80',
     readTime: '7 min read',
+    href: null,
   },
   {
     tag: 'Training',
@@ -24,6 +27,7 @@ const articles = [
     desc: 'A practical guide to tracking labour costs against estimated hours, and using historical data to estimate future projects accurately.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80',
     readTime: '4 min read',
+    href: null,
   },
 ];
 
@@ -56,38 +60,54 @@ export default function Resources() {
 
         {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {articles.map((article) => (
-            <article
-              key={article.title}
-              className="group bg-white border border-arbiter-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-arbiter-dark/5 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-            >
-              {/* Image */}
-              <div className="aspect-[16/9] overflow-hidden">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+          {articles.map((article) => {
+            const inner = (
+              <>
+                {/* Image */}
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${article.tagColor}`}>
-                    {article.tag}
-                  </span>
-                  <span className="text-xs text-arbiter-muted">{article.readTime}</span>
+                {/* Content */}
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${article.tagColor}`}>
+                      {article.tag}
+                    </span>
+                    <span className="text-xs text-arbiter-muted">{article.readTime}</span>
+                  </div>
+                  <h3 className="font-bold text-arbiter-dark text-sm leading-snug mb-2 group-hover:text-arbiter-green transition-colors">
+                    {article.title}
+                  </h3>
+                  <p className="text-xs text-arbiter-muted leading-relaxed line-clamp-3">{article.desc}</p>
+                  <div className="mt-4 flex items-center gap-1 text-arbiter-green text-xs font-semibold group-hover:gap-2 transition-all">
+                    Read more <ArrowRight size={12} />
+                  </div>
                 </div>
-                <h3 className="font-bold text-arbiter-dark text-sm leading-snug mb-2 group-hover:text-arbiter-green transition-colors">
-                  {article.title}
-                </h3>
-                <p className="text-xs text-arbiter-muted leading-relaxed line-clamp-3">{article.desc}</p>
-                <div className="mt-4 flex items-center gap-1 text-arbiter-green text-xs font-semibold group-hover:gap-2 transition-all">
-                  Read more <ArrowRight size={12} />
-                </div>
-              </div>
-            </article>
-          ))}
+              </>
+            );
+
+            return article.href ? (
+              <Link
+                key={article.title}
+                href={article.href}
+                className="group bg-white border border-arbiter-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-arbiter-dark/5 hover:-translate-y-1 transition-all duration-300"
+              >
+                {inner}
+              </Link>
+            ) : (
+              <article
+                key={article.title}
+                className="group bg-white border border-arbiter-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-arbiter-dark/5 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+              >
+                {inner}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

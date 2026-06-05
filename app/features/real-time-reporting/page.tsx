@@ -4,7 +4,7 @@ export default function RealTimeReportingPage() {
   return (
     <FeaturePageLayout
       title="Real-Time Reporting"
-      subtitle="Accurate, up-to-the-minute project progression and efficiency tracking — so your team always makes informed decisions and cost-effective processes are always followed."
+      subtitle="Accurate, up-to-the-minute project progression and efficiency tracking, so your team always makes informed decisions and cost-effective processes are always followed."
       heroImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80"
       ctaLabel="See real-time reporting in action"
       sections={[
@@ -26,7 +26,7 @@ export default function RealTimeReportingPage() {
         {
           heading: 'Weekly Efficiency Reports',
           body: [
-            'Arbiter generates weekly efficiency reports that give project leads and owners a consistent, structured view of progress. No manual compilation — the system does it automatically, so your reporting is always current and always trustworthy.',
+            'Arbiter generates weekly efficiency reports that give project leads and owners a consistent, structured view of progress. No manual compilation. The system does it automatically, so your reporting is always current and always trustworthy.',
           ],
         },
       ]}

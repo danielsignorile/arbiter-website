@@ -67,7 +67,7 @@ export default function PitfallsOfExcelPage() {
               </svg>
             </div>
             <p className="text-sm text-amber-800 leading-relaxed">
-              <strong>Small mistakes in manual data entry can lead to substantial inaccuracies</strong> — a single misreferenced cell in a complex schedule can cascade into days or weeks of misaligned task dependencies.
+              <strong>Small mistakes in manual data entry can lead to substantial inaccuracies.</strong> A single misreferenced cell in a complex schedule can cascade into days or weeks of misaligned task dependencies.
             </p>
           </div>
 

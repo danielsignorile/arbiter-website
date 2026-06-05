@@ -33,7 +33,7 @@ export default function AboutPage() {
             <div className="prose-section space-y-6 mb-16">
               <p className="text-lg text-arbiter-muted leading-relaxed">
                 Arbiter's lineage is rooted not in a sterile lab but in the grit of Field-Observed
-                innovation — a development philosophy in which software is forged through direct
+                innovation, a development philosophy in which software is forged through direct
                 observation of real-world friction. Instead of engineers guessing what a professional
                 needs, the platform was built by identifying the granular, often invisible obstacles
                 that stall high-stakes projects. This "boots on the ground" origin is critical because

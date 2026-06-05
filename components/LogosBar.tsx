@@ -17,7 +17,7 @@ export default function LogosBar() {
         Trusted by Leading Project Teams
       </p>
 
-      {/* Carousel wrapper — fades out at edges */}
+      {/* Carousel wrapper, fades out at edges */}
       <div
         className="relative"
         style={{

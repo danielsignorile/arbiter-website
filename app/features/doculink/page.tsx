@@ -4,14 +4,14 @@ export default function DoculinkPage() {
   return (
     <FeaturePageLayout
       title="Doculink"
-      subtitle="A digital document repository that stores all project-related files in a customized structure — and links them directly to objects and check sheets inside Arbiter."
+      subtitle="A digital document repository that stores all project-related files in a customized structure, linking them directly to objects and check sheets inside Arbiter."
       heroImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&auto=format&fit=crop&q=80"
       ctaLabel="See Doculink in action"
       sections={[
         {
           heading: 'One Repository for Every File',
           body: [
-            'Doculink connects with Arbiter Completions and Controls to give your team instant access to any project file, from anywhere. Every file is stored in a specific category so it can always be found — no more searching through folders or emailing documents back and forth.',
+            'Doculink connects with Arbiter Completions and Controls to give your team instant access to any project file, from anywhere. Every file is stored in a specific category so it can always be found. No more searching through folders or emailing documents back and forth.',
           ],
           bullets: [
             { title: '', body: 'Mass upload up to 500 files at a time.' },

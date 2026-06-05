@@ -167,7 +167,7 @@ export default function ProjectTransparencyPage() {
             <p className="mt-4">
               If your company cannot track its project progress due to inaccurate reporting, your
               leads will have a hard time planning the next project stage. Without accurate planning,
-              the scheduling of teams, employees, and resources will not be accurate — creating
+              the scheduling of teams, employees, and resources will not be accurate, creating
               delays and overruns, especially when project deficiencies have to be taken care of.
             </p>
             <div className="mt-5 bg-arbiter-gray-bg border border-arbiter-border rounded-xl p-5">
