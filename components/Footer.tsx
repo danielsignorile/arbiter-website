@@ -5,12 +5,12 @@ const footerLinks = [
   {
     heading: 'What We Offer',
     links: [
-      { label: 'SoftChecks', href: '/features/softchecks' },
-      { label: 'Actions and Deficiencies', href: '/features/actions-and-deficiencies' },
-      { label: 'Real-Time Reporting', href: '/features/real-time-reporting' },
-      { label: 'Dynamic ITP', href: '/features/dynamic-itp' },
-      { label: 'Doculink', href: '/features/doculink' },
-      { label: 'Dossier (Document Turnover)', href: '/features/dossier' },
+      { label: 'SoftChecks', href: 'https://www.arbiter-completions.com/features/softchecks' },
+      { label: 'Actions and Deficiencies', href: 'https://www.arbiter-completions.com/features/actions-and-deficiencies' },
+      { label: 'Real-Time Reporting', href: 'https://www.arbiter-completions.com/features/real-time-reporting' },
+      { label: 'Dynamic ITP', href: 'https://www.arbiter-completions.com/features/dynamic-itp' },
+      { label: 'Doculink', href: 'https://www.arbiter-completions.com/features/doculink' },
+      { label: 'Dossier (Document Turnover)', href: 'https://www.arbiter-completions.com/features/dossier' },
     ],
   },
   {
