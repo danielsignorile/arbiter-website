@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import FeaturePageLayout from '@/components/FeaturePageLayout';
+
+export const metadata: Metadata = {
+  title: 'Dossier | Digital Turnover Packages | Arbiter',
+  description:
+    'Compile digital turnover packages automatically. Arbiter builds complete, indexed handover dossiers as you go and archives them on client systems.',
+  alternates: { canonical: '/features/dossier' },
+};
 
 export default function DossierPage() {
   return (

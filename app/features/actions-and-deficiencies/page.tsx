@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import FeaturePageLayout from '@/components/FeaturePageLayout';
+
+export const metadata: Metadata = {
+  title: 'Actions and Deficiencies | Punch List Tracking | Arbiter',
+  description:
+    'Real-time punch list and deficiency tracking for capital projects. Assign, track and close out actions and deficiencies with a full audit trail.',
+  alternates: { canonical: '/features/actions-and-deficiencies' },
+};
 
 export default function ActionsAndDeficienciesPage() {
   return (

@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import FeaturePageLayout from '@/components/FeaturePageLayout';
+
+export const metadata: Metadata = {
+  title: 'Dynamic ITP | Inspection and Test Plans | Arbiter',
+  description:
+    'Build and manage digital Inspection and Test Plans (ITPs) with a full audit trail. Control quality, hold points and witness points across every discipline.',
+  alternates: { canonical: '/features/dynamic-itp' },
+};
 
 export default function DynamicITPPage() {
   return (

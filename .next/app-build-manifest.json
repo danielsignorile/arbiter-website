@@ -10,6 +10,21 @@
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/features/softchecks/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/features/softchecks/page.js"
+    ],
+    "/case-studies/ipc-blackrod-sagd/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/case-studies/ipc-blackrod-sagd/page.js"
+    ],
+    "/case-studies/ipc-blackrod-sagd/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/case-studies/ipc-blackrod-sagd/layout.js"
     ]
   }
 }

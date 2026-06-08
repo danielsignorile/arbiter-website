@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import FeaturePageLayout from '@/components/FeaturePageLayout';
+
+export const metadata: Metadata = {
+  title: 'SoftChecks | Digital Check Sheets for Capital Projects | Arbiter',
+  description:
+    'Digital, mobile and offline-capable check sheets for capital projects. Upload, complete, and file every check sheet inside Arbiter — no printing, no scanning.',
+  alternates: { canonical: '/features/softchecks' },
+};
 
 export default function SoftChecksPage() {
   return (

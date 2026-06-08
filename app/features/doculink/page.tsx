@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import FeaturePageLayout from '@/components/FeaturePageLayout';
+
+export const metadata: Metadata = {
+  title: 'Doculink | Document Repository for Capital Projects | Arbiter',
+  description:
+    'A controlled document repository for capital projects. Batch upload hundreds of drawings and data sheets and keep every revision controlled in one place.',
+  alternates: { canonical: '/features/doculink' },
+};
 
 export default function DoculinkPage() {
   return (

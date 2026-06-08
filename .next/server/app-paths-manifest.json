@@ -1,3 +1,4 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/case-studies/ipc-blackrod-sagd/page": "app/case-studies/ipc-blackrod-sagd/page.js"
 }

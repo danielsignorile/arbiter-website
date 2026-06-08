@@ -13,6 +13,11 @@ import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import CTABanner from '@/components/CTABanner';
 import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.arbiter-completions.com' },
+};
 
 export default function Home() {
   return (

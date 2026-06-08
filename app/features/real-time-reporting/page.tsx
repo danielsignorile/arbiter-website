@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import FeaturePageLayout from '@/components/FeaturePageLayout';
+
+export const metadata: Metadata = {
+  title: 'Real-Time Reporting | Earned vs Burned Value | Arbiter',
+  description:
+    'Real-time completions reporting with earned vs. burned value and customizable dashboards. See true project progress from construction to handover.',
+  alternates: { canonical: '/features/real-time-reporting' },
+};
 
 export default function RealTimeReportingPage() {
   return (
