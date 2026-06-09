@@ -1,4 +1,18 @@
 {
-  "/page": "app/page.js",
-  "/case-studies/ipc-blackrod-sagd/page": "app/case-studies/ipc-blackrod-sagd/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/hubspot/route": "app/api/hubspot/route.js",
+  "/about/page": "app/about/page.js",
+  "/learn/case-studies/page": "app/learn/case-studies/page.js",
+  "/learn/news/pitfalls-of-excel-scheduling/page": "app/learn/news/pitfalls-of-excel-scheduling/page.js",
+  "/learn/news/page": "app/learn/news/page.js",
+  "/learn/news/power-of-real-time-information/page": "app/learn/news/power-of-real-time-information/page.js",
+  "/learn/page": "app/learn/page.js",
+  "/learn/news/project-transparency/page": "app/learn/news/project-transparency/page.js",
+  "/features/actions-and-deficiencies/page": "app/features/actions-and-deficiencies/page.js",
+  "/features/doculink/page": "app/features/doculink/page.js",
+  "/features/softchecks/page": "app/features/softchecks/page.js",
+  "/features/dossier/page": "app/features/dossier/page.js",
+  "/features/real-time-reporting/page": "app/features/real-time-reporting/page.js",
+  "/features/dynamic-itp/page": "app/features/dynamic-itp/page.js",
+  "/page": "app/page.js"
 }

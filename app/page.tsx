@@ -1,6 +1,4 @@
 import Navbar from '@/components/Navbar';
-import AnnouncementBar, { AnnouncementSpacer } from '@/components/AnnouncementBar';
-import { AnnouncementBarProvider } from '@/components/AnnouncementBarContext';
 import Hero from '@/components/Hero';
 import LogosBar from '@/components/LogosBar';
 import Features from '@/components/Features';
@@ -21,11 +19,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <AnnouncementBarProvider>
-      <AnnouncementBar />
+    <>
       <Navbar />
       <main>
-        <AnnouncementSpacer />
         <Hero />
         <LogosBar />
         <Features />
@@ -39,6 +35,6 @@ export default function Home() {
         <CTABanner />
       </main>
       <Footer />
-    </AnnouncementBarProvider>
+    </>
   );
 }

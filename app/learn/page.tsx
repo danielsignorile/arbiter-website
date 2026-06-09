@@ -6,15 +6,6 @@ import { ArrowRight } from 'lucide-react';
 
 const sections = [
   {
-    tag: 'Case Studies',
-    href: '/learn/case-studies',
-    tagColor: 'bg-blue-50 text-blue-700 border-blue-200',
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&auto=format&fit=crop&q=80',
-    title: 'IPC Blackrod SAGD: Vendor Accountability Enforced Pre-Startup',
-    desc: "How Arbiter's digital check sheet system caught a critical flame detector discrepancy before first fire and compiled the full audit trail instantly.",
-    readTime: '5 min read',
-  },
-  {
     tag: 'News & Insights',
     href: '/learn/news',
     tagColor: 'bg-amber-50 text-amber-700 border-amber-200',

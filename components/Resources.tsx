@@ -3,15 +3,6 @@ import { ArrowRight } from 'lucide-react';
 
 const articles = [
   {
-    tag: 'Case Study',
-    tagColor: 'bg-blue-50 text-blue-700 border border-blue-200',
-    title: 'IPC Blackrod SAGD: Vendor Accountability Enforced Pre-Startup',
-    desc: "How Arbiter's digital check sheet system caught a critical flame detector discrepancy before first fire and compiled the full audit trail instantly.",
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&auto=format&fit=crop&q=80',
-    readTime: '5 min read',
-    href: '/case-studies/ipc-blackrod-sagd',
-  },
-  {
     tag: 'Insight',
     tagColor: 'bg-amber-50 text-amber-700 border border-amber-200',
     title: 'Why Paper-Based Commissioning Is Costing Projects Millions',
