@@ -5,6 +5,15 @@ import { ArrowRight } from 'lucide-react';
 
 const articles = [
   {
+    href: '/learn/news/north-america-project-intelligence-june-2026',
+    title: 'North America Market Intelligence Briefing',
+    subtitle: 'LNG, Data Centre, Semiconductor & Power Sectors',
+    desc: 'A June 2026 snapshot of the Gulf Coast LNG mega-wave and the AI-driven data centre and semiconductor buildout — key energy and industrial developments, EPC awards, and new projects to track across North America.',
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80',
+    readTime: '8 min read',
+    tag: 'Briefing',
+  },
+  {
     href: '/learn/news/power-of-real-time-information',
     title: 'The Power of Real-Time Information',
     subtitle: 'Enhancing Project Success through Live Updates',
@@ -58,7 +67,7 @@ export default function NewsPage() {
                   <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6 flex flex-col justify-center">
-                  <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border bg-amber-50 text-amber-700 border-amber-200 w-fit mb-3">Insight</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border bg-amber-50 text-amber-700 border-amber-200 w-fit mb-3">{article.tag ?? 'Insight'}</span>
                   <h2 className="font-bold text-arbiter-dark text-base leading-snug mb-1 group-hover:text-arbiter-green transition-colors">{article.title}</h2>
                   {article.subtitle && <p className="text-xs text-arbiter-green font-medium mb-2">{article.subtitle}</p>}
                   <p className="text-sm text-arbiter-muted leading-relaxed mb-3">{article.desc}</p>
