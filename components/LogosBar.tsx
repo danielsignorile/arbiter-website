@@ -5,6 +5,7 @@ const logos = [
   { src: '/logo-spectra.png', alt: 'Spectra Energy', width: 140, height: 40 },
   { src: '/logo-williams.webp', alt: 'Williams', width: 140, height: 40 },
   { src: '/logo-voltagrid.jpeg', alt: 'Voltagrid', width: 140, height: 40 },
+  { src: '/logo-sancon.webp', alt: 'Sancon', width: 140, height: 40 },
 ];
 
 // Duplicate the set 4× so the loop stays gap-free across wide viewports.
