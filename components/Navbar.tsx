@@ -19,6 +19,7 @@ const navItems: NavItem[] = [
     sectionLabel: 'PLATFORM FEATURES',
     items: [
       { label: 'SoftChecks', href: '/features/softchecks', desc: 'Digital check sheets, mobile & offline capable' },
+      { label: 'Arbiter Forms', href: '/features/arbiter-forms', desc: 'RFIs, Toolbox Talks, meetings & action items' },
       { label: 'Actions & Deficiencies', href: '/features/actions-and-deficiencies', desc: 'Real-time punch list tracking and assignment' },
       { label: 'Real-Time Reporting', href: '/features/real-time-reporting', desc: 'Earned vs. burned value, customizable dashboards' },
       { label: 'Dynamic ITP', href: '/features/dynamic-itp', desc: 'Inspection and Test Plans with full audit trail' },
