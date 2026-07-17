@@ -1,6 +1,8 @@
 import Image from 'next/image';
 
-const logos = [
+type Logo = { src: string; alt: string; width: number; height: number; imgClassName?: string };
+
+const logos: Logo[] = [
   { src: '/logo-cenovus.svg', alt: 'Cenovus Energy', width: 140, height: 40 },
   { src: '/logo-spectra.png', alt: 'Spectra Energy', width: 140, height: 40 },
   { src: '/logo-williams.webp', alt: 'Williams', width: 140, height: 40 },
